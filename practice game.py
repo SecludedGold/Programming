@@ -4,8 +4,8 @@ import pygame
 
 pygame.init()
 
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -16,17 +16,17 @@ while run:
 
     screen.fill((0,0,0))
 
-    pygame.draw.rect(screen, (255, 0, 0))
+    pygame.draw.rect(screen, (255, 255, 255), player)
 
     key = pygame.key.get_pressed()
     if key[pygame.K_a] == True:
-        player.move_ip(-1, 0)
+        player.move_ip(-8, 0)
     elif key[pygame.K_d] == True:
-        player.move_ip(1, 0)
-    elif key[pygame.K_s] == True:
-        player.move_ip(0, -1)
+        player.move_ip(8, 0)
     elif key[pygame.K_w] == True:
-        player.move_ip(0, 1)
+        player.move_ip(0, -8)
+    elif key[pygame.K_s] == True:
+        player.move_ip(0, 8)
 
 
     for event in pygame.event.get():
